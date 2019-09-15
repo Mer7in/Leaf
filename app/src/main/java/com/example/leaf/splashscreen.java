@@ -28,6 +28,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.UserHandle;
 import android.view.Display;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,13 +42,22 @@ import java.util.Vector;
 
 public class splashscreen extends AppCompatActivity {
 
-    Vector
+    private LinearLayout =
+    private ImageView polygon;
+    private TextView splashtext1;
+    private TextView splashtext2;
+
     private Handler mHandler;
     private Runnable mRunnable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
+
+        splashlogo =findViewById(R.id.splashlogo);
+        polygon=findViewById(R.id.polygon);
+        splashtext1=findViewById(R.id.splashtext1);
+        splashtext2=findViewById(R.id.splashtext2);
 
         mRunnable = new Runnable() {
 
