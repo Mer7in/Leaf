@@ -30,6 +30,7 @@ import android.os.UserHandle;
 import android.view.Display;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.io.File;
@@ -42,10 +43,11 @@ import java.util.Vector;
 
 public class splashscreen extends AppCompatActivity {
 
-    private LinearLayout =
+    private ImageView splashlogo;
     private ImageView polygon;
     private TextView splashtext1;
     private TextView splashtext2;
+    private ProgressBar pBar;
 
     private Handler mHandler;
     private Runnable mRunnable;
@@ -54,21 +56,26 @@ public class splashscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
 
-        splashlogo =findViewById(R.id.splashlogo);
-        polygon=findViewById(R.id.polygon);
-        splashtext1=findViewById(R.id.splashtext1);
+        splashlogo = findViewById(R.id.splashlogo);
+        polygon= findViewById(R.id.polygon);
+        splashtext1= findViewById(R.id.splashtext1);
         splashtext2=findViewById(R.id.splashtext2);
-
+        pBar= findViewById(R.id.pBar);
         mRunnable = new Runnable() {
 
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), splashscreen.class));
+                Intent intent = new Intent(splashscreen.this,MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent); // Add this
+                splashscreen.this.finish();
             }
         };
 
         mHandler = new Handler();
         mHandler.postDelayed(mRunnable,2000);
+
+
     }
 
     protected void onDestroy()
