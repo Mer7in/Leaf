@@ -16,11 +16,13 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -74,7 +76,8 @@ public class splashscreen extends AppCompatActivity {
 
         mHandler = new Handler();
         mHandler.postDelayed(mRunnable,2000);
-
+        int colorCodeDark = Color.parseColor("#FFFFFF");
+        pBar.setIndeterminateTintList(ColorStateList.valueOf(colorCodeDark));
 
     }
 

@@ -12,6 +12,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 
+import com.example.leaf.fragment.cereals_fragment;
+import com.example.leaf.fragment.fruit_fragment;
+import com.example.leaf.fragment.vegetables_fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 

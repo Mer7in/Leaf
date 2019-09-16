@@ -26,17 +26,17 @@
         android:scaleType="fitXY"
         app:srcCompat="@drawable/triangle" />
 
+
     <ImageView
         android:id="@+id/splashlogo"
-        android:layout_width="161dp"
-        android:layout_height="310dp"
+        android:layout_width="181dp"
+        android:layout_height="327dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="53dp"
         app:srcCompat="@drawable/splashleaf" />
-
 
     <TextView
         android:id="@+id/splashtext1"
@@ -65,9 +65,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="222dp"
+        android:layout_marginStart="226dp"
         android:layout_marginTop="317dp"
-        android:layout_marginEnd="106dp"
+        android:layout_marginEnd="102dp"
         android:layout_marginBottom="307dp"
         android:fontFamily="sans-serif-condensed-light"
         android:lineHeight="70dp"
@@ -89,7 +89,7 @@
         android:layout_marginEnd="167dp"
         android:layout_marginBottom="102dp"
         android:background="@color/colorPrimaryDark"
-        android:progressTint="#FCFDFD">
+        android:progressTint="#FFF">
     </ProgressBar>
 
 
