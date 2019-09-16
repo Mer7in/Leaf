@@ -35,7 +35,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="161dp"
         android:layout_marginTop="51dp"
-        android:src="@drawable/splashleaf" />
+        app:srcCompat="@drawable/splashleaf" />
 
 
     <TextView
@@ -88,7 +88,7 @@
         android:layout_marginStart="167dp"
         android:layout_marginEnd="167dp"
         android:layout_marginBottom="102dp"
-        android:background="#1FEE8B"
+        android:background="#FFF"
         android:progressTint="#FCFDFD">
     </ProgressBar>
 
