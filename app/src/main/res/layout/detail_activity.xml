@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".DetailActivity">
-    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -15,14 +14,24 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:theme="@style/ToolbarColoredBackArrow"
+                android:layout_height="328dp"
+                android:background="@drawable/goyave"
                 app:popupTheme="@style/MyMaterialTheme.Base"
-                app:titleTextColor="@color/colorPrimaryDark"
-                android:id="@+id/toolbar">
+                app:theme="@style/ToolbarColoredBackArrow"
+                app:titleTextColor="@color/colorPrimaryDark">
 
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:text="Fruit"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp" />
             </androidx.appcompat.widget.Toolbar>
+
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
@@ -30,6 +39,7 @@
                 app:tabMode="fixed"
                 app:tabGravity="fill"
                 android:background="@color/colorPrimaryDark"
+                app:tabIconTint="@color/colorPrimary"
                 app:tabIndicatorColor="@color/colorPrimary"
                 app:tabTextColor="@color/colorPrimary"
                 app:tabSelectedTextColor="@color/colorPrimary"/>

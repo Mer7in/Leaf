@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private int[] tabIcons = {
-            R.drawable.toolbarfruit,
+            R.drawable.orangeicon,
             R.drawable.cerealwheat,
             R.drawable.vegetablefood
     };

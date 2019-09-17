@@ -25,9 +25,9 @@ public class DetailActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private int[] tabIcons = {
-            R.drawable.intineraire,
-            R.drawable.info,
-            R.drawable.cheaf
+            R.drawable.ic_place_white_56dp,
+            R.drawable.ic_info_black_24dp,
+            R.drawable.ic_search
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,9 @@ public class DetailActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         viewPager=(ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -44,7 +46,6 @@ public class DetailActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-
         setupTabIcons();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
