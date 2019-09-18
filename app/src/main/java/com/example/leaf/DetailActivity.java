@@ -8,9 +8,13 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.leaf.fragment.CheafFragment;
+import com.example.leaf.fragment.InfoFragment;
+import com.example.leaf.fragment.LocationFragment;
 import com.example.leaf.fragment.cereals_fragment;
 import com.example.leaf.fragment.fruit_fragment;
 import com.example.leaf.fragment.vegetables_fragment;
@@ -34,17 +38,17 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_activity);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        viewPager=(ViewPager) findViewById(R.id.viewpager);
+        viewPager= findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -66,9 +70,9 @@ public class DetailActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         DetailActivity.ViewPagerAdapter adapter = new DetailActivity.ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new fruit_fragment(), "Location");
-        adapter.addFragment(new cereals_fragment(), "Info");
-        adapter.addFragment(new vegetables_fragment(), "Recipes");
+        adapter.addFragment(new InfoFragment(), "Location");
+        adapter.addFragment(new LocationFragment(), "Info");
+        adapter.addFragment(new CheafFragment(), "Recipes");
         viewPager.setAdapter(adapter);
     }
 

@@ -26,8 +26,7 @@
                     android:id="@+id/marketPlace"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:scaleX="true"
-                    android:scaleY="true"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/marketplace1"/>
 
 
