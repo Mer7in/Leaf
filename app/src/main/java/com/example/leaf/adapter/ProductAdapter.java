@@ -52,6 +52,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                     Bitmap bmp = BitmapFactory.decodeByteArray(data, 0,data.length);
                     // Set the Bitmap into the imageView
                     holder.icon.setImageBitmap(bmp);
+                    Log.d("test","Image loaded");
                 } else {
                     Log.d("test", "There was a problem downloading the data.");
                 }
@@ -62,7 +63,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return 0;
+        return products.size();
     }
 
     public static  class ViewHolder  extends RecyclerView.ViewHolder{
