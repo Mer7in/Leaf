@@ -6,11 +6,20 @@ import com.example.leaf.Model.Product;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
-public class ParseApplication extends Application {
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+
+public class LeafApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
 
+
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+        // Can be Level.BASIC, Level.HEADERS, or Level.BODY
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        builder.networkInterceptors().add(httpLoggingInterceptor);
         ParseObject.registerSubclass(Product.class);
         // set applicationId, and server server based on the values in the Heroku settings.
         // clientKey is not needed unless explicitly configured

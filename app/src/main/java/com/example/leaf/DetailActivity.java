@@ -8,16 +8,12 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.leaf.fragment.CheafFragment;
 import com.example.leaf.fragment.InfoFragment;
 import com.example.leaf.fragment.LocationFragment;
-import com.example.leaf.fragment.cereals_fragment;
-import com.example.leaf.fragment.fruit_fragment;
-import com.example.leaf.fragment.vegetables_fragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -31,7 +27,7 @@ public class DetailActivity extends AppCompatActivity {
     private int[] tabIcons = {
             R.drawable.ic_place_white_56dp,
             R.drawable.ic_info_black_24dp,
-            R.drawable.ic_search
+            R.drawable.cheaf
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +38,13 @@ public class DetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }
+        });
 
         viewPager= findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -51,15 +53,7 @@ public class DetailActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                finish();
-            }
-        });
+
     }
 
     private void setupTabIcons() {

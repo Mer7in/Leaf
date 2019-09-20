@@ -1,24 +1,22 @@
 package com.example.leaf;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class ProductCard extends AppCompatActivity {
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-    private CardView cardView;
+public class CardActivity extends AppCompatActivity {
+
     private Toolbar toolbar;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_card);
+        setContentView(R.layout.activity_product_list);
 
-        cardView= findViewById(R.id.cardView);
-        /*toolbar = findViewById(R.id.toolbar_card);
+        toolbar = findViewById(R.id.toolbar_card);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -28,7 +26,8 @@ public class ProductCard extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),DetailActivity.class));
                 finish();
             }
-        });*/
+        });
+        
     }
 
 }
