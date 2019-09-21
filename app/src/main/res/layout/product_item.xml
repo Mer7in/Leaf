@@ -2,37 +2,46 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="141dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="6dip"
-        android:layout_marginBottom="0dp"
-        android:contentDescription="TODO"
-        android:src="@drawable/toolbarfruit" />
-
-    <TextView
-        android:id="@+id/description"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="26dip"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginRight="-5dp"
-        android:layout_marginBottom="17dp"
-        android:layout_toRightOf="@id/icon"
-        android:ellipsize="marquee"
-        android:singleLine="true"
-        android:text="Description"
-        android:textColor="#000"
-        android:textSize="12sp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="6dip"
+            android:layout_marginBottom="0dp"
+            android:contentDescription="TODO"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="-1dp"
+            android:layout_marginRight="-1dp"
+            android:layout_marginBottom="17dp"
+            android:layout_toRightOf="@id/icon"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:textColor="#B1B1B1"
+            android:layout_gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="Fruit"
+            android:textSize="24sp" />
+    </LinearLayout>
 </RelativeLayout>
