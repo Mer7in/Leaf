@@ -1,5 +1,6 @@
 package com.example.leaf.fragment;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,37 +24,39 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fruit_fragment extends Fragment {
+
+
+public class cereal_fragment extends Fragment {
 
     private RecyclerView recyclerView;
     private List<Product> products;
     private ProductAdapter productAdapter;
-    private final String TAG="fruit_fragment";
-    public fruit_fragment() {
+    private final String TAG="cereal_fragment";
+
+    public cereal_fragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        queryFruit();
+        super.onCreate(savedInstanceState);
+        //queryCereal();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view= inflater.inflate(R.layout.fragment_fruit, container, false);
-        recyclerView= view.findViewById(R.id.fruitRecycleView);
-        productAdapter=new ProductAdapter(getContext(),products);
-        this.configureOnClickRecyclerView();
+        View view= inflater.inflate(R.layout.fragment_cereals, container, false);
+       // recyclerView= view.findViewById(R.id.cerealRecycleView);
+       // productAdapter=new ProductAdapter(getContext(),products);
+        //this.configureOnClickRecyclerView();
 
         return view;
     }
 
     private void configureOnClickRecyclerView(){
-        ItemClickSupport.addTo(recyclerView, R.layout.fragment_fruit)
+        ItemClickSupport.addTo(recyclerView, R.layout.fragment_cereals)
                 .setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
@@ -63,10 +66,10 @@ public class fruit_fragment extends Fragment {
                 });
     }
 
-    public void queryFruit()
+    public void queryCereal()
     {
         ParseQuery<Product> query = new ParseQuery<Product>(Product.class);
-        query.whereEqualTo("type","Fruit");
+        query.whereEqualTo("type","Cereal");
         query.orderByAscending("name");
         products=new ArrayList<>();
         query.findInBackground(new FindCallback<Product>(){
@@ -80,7 +83,7 @@ public class fruit_fragment extends Fragment {
 
                     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                     recyclerView.setAdapter(productAdapter);
-                    Log.d("message",product.toString());
+                    //Log.d("message",product.toString());
                     productAdapter.notifyDataSetChanged();
 
                 } else {
@@ -90,13 +93,5 @@ public class fruit_fragment extends Fragment {
         });
 
     }
-
-    /*
-    public void SearchFruit()
-    {
-        ParseQuery<Product> query =new ParseQuery<Product>(Product.class);
-
-    }*/
-
 
 }

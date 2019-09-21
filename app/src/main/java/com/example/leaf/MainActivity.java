@@ -2,7 +2,6 @@ package com.example.leaf;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -12,9 +11,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 
-import com.example.leaf.fragment.cereals_fragment;
+import com.example.leaf.fragment.cereal_fragment;
 import com.example.leaf.fragment.fruit_fragment;
-import com.example.leaf.fragment.vegetables_fragment;
+import com.example.leaf.fragment.vegetable_fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -56,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         
-        viewPager=(ViewPager) findViewById(R.id.viewpager);
+        viewPager= findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
     }
@@ -74,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new fruit_fragment(), "FRUIT");
-        adapter.addFragment(new cereals_fragment(), "CEREAL");
-        adapter.addFragment(new vegetables_fragment(), "VEGETABLE");
+        adapter.addFragment(new cereal_fragment(), "CEREAL");
+        adapter.addFragment(new vegetable_fragment(), "VEGETABLE");
         viewPager.setAdapter(adapter);
     }
 
