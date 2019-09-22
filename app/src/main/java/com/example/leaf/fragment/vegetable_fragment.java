@@ -62,6 +62,7 @@ public class vegetable_fragment extends Fragment {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         Intent i=new Intent(getContext(), DetailActivity.class);
+
                         startActivity(i);
                     }
                 });

@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -48,21 +49,10 @@ public class fruit_fragment extends Fragment {
         productAdapter=new ProductAdapter(getContext(),products);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(productAdapter);
-        this.configureOnClickRecyclerView();
 
         return view;
     }
 
-    private void configureOnClickRecyclerView(){
-        ItemClickSupport.addTo(recyclerView, R.layout.fragment_fruit)
-                .setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
-                    @Override
-                    public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                        Intent i=new Intent(getContext(), DetailActivity.class);
-                        startActivity(i);
-                    }
-                });
-    }
 
     public void queryFruit()
     {
