@@ -41,16 +41,18 @@ public class cereal_fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        //queryCereal();
+        queryCereal();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_cereals, container, false);
-       // recyclerView= view.findViewById(R.id.cerealRecycleView);
-       // productAdapter=new ProductAdapter(getContext(),products);
-        //this.configureOnClickRecyclerView();
+        recyclerView= view.findViewById(R.id.cerealRecycleView);
+        productAdapter=new ProductAdapter(getContext(),products);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(productAdapter);
+        this.configureOnClickRecyclerView();
 
         return view;
     }
@@ -80,9 +82,6 @@ public class cereal_fragment extends Fragment {
 
                     products.clear();
                     products.addAll(product);
-
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                    recyclerView.setAdapter(productAdapter);
                     //Log.d("message",product.toString());
                     productAdapter.notifyDataSetChanged();
 

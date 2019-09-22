@@ -41,7 +41,7 @@ public class vegetable_fragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //queryVegetable();
+        queryVegetable();
     }
 
     @Override
@@ -50,6 +50,8 @@ public class vegetable_fragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_vegetables,container,false);
         recyclerView =view.findViewById(R.id.vegetableRecycleView);
         productAdapter=new ProductAdapter(getContext(),products);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(productAdapter);
         this.configureOnClickRecyclerView();
         return view;
 }
@@ -79,10 +81,7 @@ public class vegetable_fragment extends Fragment {
 
                     products.clear();
                     products.addAll(product);
-
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                    recyclerView.setAdapter(productAdapter);
-                    Log.d("message",product.toString());
+                   // Log.d("message",product.toString());
                     productAdapter.notifyDataSetChanged();
 
                 } else {

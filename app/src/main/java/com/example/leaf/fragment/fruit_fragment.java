@@ -36,7 +36,6 @@ public class fruit_fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         queryFruit();
     }
 
@@ -47,6 +46,8 @@ public class fruit_fragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_fruit, container, false);
         recyclerView= view.findViewById(R.id.fruitRecycleView);
         productAdapter=new ProductAdapter(getContext(),products);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(productAdapter);
         this.configureOnClickRecyclerView();
 
         return view;
@@ -77,10 +78,7 @@ public class fruit_fragment extends Fragment {
 
                     products.clear();
                     products.addAll(product);
-
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                    recyclerView.setAdapter(productAdapter);
-                    Log.d("message",product.toString());
+                    //Log.d("message",product.toString());
                     productAdapter.notifyDataSetChanged();
 
                 } else {
