@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Parcel;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -88,9 +91,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         productRv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, DetailActivity.class);
-
-                context.startActivity(i);
+               Intent i = new Intent(context, DetailActivity.class);
+               i.putExtra("KEY_ID",product.getObjectId());
+               context.startActivity(i);
             }
         });
         }
