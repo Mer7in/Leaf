@@ -23,6 +23,7 @@ import com.example.leaf.DetailActivity;
 import com.example.leaf.Model.Product;
 import com.example.leaf.R;
 import com.parse.GetDataCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 
@@ -92,7 +93,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             @Override
             public void onClick(View view) {
                Intent i = new Intent(context, DetailActivity.class);
-               i.putExtra("KEY_ID",product.getObjectId());
+               i.putExtra("objectId",product.getObjectId());
+               i.putExtra("name",product.getName());
+               i.putExtra("type",product.getType());
+                ParseFile file=product.getParseFile("image");
+               i.putExtra("url",file.getUrl());
                context.startActivity(i);
             }
         });
