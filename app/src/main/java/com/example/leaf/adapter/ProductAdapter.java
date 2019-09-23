@@ -2,8 +2,11 @@ package com.example.leaf.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Parcel;
 import android.util.Log;
@@ -27,7 +30,9 @@ import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 
+import java.io.ByteArrayOutputStream;
 import java.util.List;
+
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder>
 {
@@ -96,7 +101,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                i.putExtra("objectId",product.getObjectId());
                i.putExtra("name",product.getName());
                i.putExtra("type",product.getType());
-                ParseFile file=product.getParseFile("image");
+               ParseFile file=product.getParseFile("image");
                i.putExtra("url",file.getUrl());
                context.startActivity(i);
             }
