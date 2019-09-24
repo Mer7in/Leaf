@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:id="@+id/placeRv"
+    >
+
+    <TextView
+        android:id="@+id/textViewLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_centerVertical="true"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/cardListButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:background="#FFF"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_arrow_forward_black_24dp" />
+
+    <View
+        android:id="@+id/dividerLocation"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/listDivider" />
+</RelativeLayout>

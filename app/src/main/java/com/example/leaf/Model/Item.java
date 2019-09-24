@@ -8,6 +8,7 @@ public class Item extends ParseObject {
     public static final String KEY_ID="objectId";
     public static final String KEY_MARKET_ID="marketId";
     public static final String  KEY_PRODUCT_ID="productId";
+    public static final String  KEY_PLACE_ID="placeId";
 
     public String getObjectId()
     {
@@ -37,5 +38,15 @@ public class Item extends ParseObject {
     public void setProductId(String productId)
     {
         put(KEY_MARKET_ID,productId);
+    }
+
+    public String getPlaceId()
+    {
+        return getString(KEY_PLACE_ID);
+    }
+
+    public void setPlaceId(String placeId)
+    {
+        put(KEY_MARKET_ID,placeId);
     }
 }

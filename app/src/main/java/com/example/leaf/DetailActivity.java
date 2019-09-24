@@ -12,33 +12,21 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
-import android.service.dreams.DreamService;
 import android.util.Log;
 import android.view.View;
 
 import android.widget.TextView;
 
-import com.bumptech.glide.load.model.stream.UrlLoader;
 import com.example.leaf.Model.Product;
 import com.example.leaf.fragment.CheafFragment;
 import com.example.leaf.fragment.InfoFragment;
 import com.example.leaf.fragment.LocationFragment;
 import com.google.android.material.tabs.TabLayout;
-import com.parse.FindCallback;
-import com.parse.GetDataCallback;
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseQuery;
 
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,19 +49,11 @@ public class DetailActivity extends AppCompatActivity {
 
         final String name=getIntent().getStringExtra("name");
         final String image=getIntent().getStringExtra("url");
-        Bundle extras = getIntent().getExtras();
+
         toolbar = findViewById(R.id.toolbar);
         toolbar_title=findViewById(R.id.toolbar_title);
-        //File myFile = (File)getIntent().getSerializableExtra("url");
-        //byte[] b = extras.getByteArray("productImage");
-        //Bitmap bmp = BitmapFactory.decodeByteArray(b, 0, b.length);
-       // File myFile = (File)getIntent().getSerializableExtra("url");
-        //byte[] b = extras.getByteArray("productImage");
-       //Bitmap b = BitmapFactory.decodeFile(image);
 
         DownloadImageTask downloadImageTask= (DownloadImageTask) new DownloadImageTask(toolbar).execute(image);
-
-        //toolbar.setBackground(drawable);
         toolbar_title.setText(name);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -106,8 +86,8 @@ public class DetailActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         DetailActivity.ViewPagerAdapter adapter = new DetailActivity.ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new InfoFragment(), "Location");
-        adapter.addFragment(new LocationFragment(), "Info");
+        adapter.addFragment(new LocationFragment(), "Location");
+        adapter.addFragment(new InfoFragment(), "Info");
         adapter.addFragment(new CheafFragment(), "Recipes");
         viewPager.setAdapter(adapter);
     }
