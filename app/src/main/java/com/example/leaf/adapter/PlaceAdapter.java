@@ -22,12 +22,14 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
     Context context;
     List<Place> places;
 
+
     public PlaceAdapter(Context context, List<Place> places)
     {
         this.context=context;
         this.places=places;
     }
-    @NonNull
+
+
     @Override
     public PlaceAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
        View view= LayoutInflater.from(context).inflate(R.layout.place_list,parent,false);
@@ -36,7 +38,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PlaceAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final PlaceAdapter.ViewHolder holder, int position) {
         Place place=places.get(position);
         holder.bind(place);
 

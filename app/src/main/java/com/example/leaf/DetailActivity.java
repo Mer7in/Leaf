@@ -2,6 +2,7 @@ package com.example.leaf;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.solver.widgets.ChainHead;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -32,6 +33,9 @@ import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
 
+    LocationFragment locationFragment =new LocationFragment();
+    InfoFragment infoFragment =new InfoFragment();
+    CheafFragment cheafFragment=new CheafFragment();
     private Product product;
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -49,7 +53,10 @@ public class DetailActivity extends AppCompatActivity {
 
         final String name=getIntent().getStringExtra("name");
         final String image=getIntent().getStringExtra("url");
-
+        final String objectId=getIntent().getStringExtra("objectId");
+        Bundle bundle=new Bundle();
+        bundle.putString("objectId",objectId);
+        locationFragment.setArguments(bundle);
         toolbar = findViewById(R.id.toolbar);
         toolbar_title=findViewById(R.id.toolbar_title);
 
@@ -86,9 +93,9 @@ public class DetailActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         DetailActivity.ViewPagerAdapter adapter = new DetailActivity.ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new LocationFragment(), "Location");
-        adapter.addFragment(new InfoFragment(), "Info");
-        adapter.addFragment(new CheafFragment(), "Recipes");
+        adapter.addFragment(locationFragment, "Location");
+        adapter.addFragment(infoFragment, "Info");
+        adapter.addFragment(cheafFragment, "Recipes");
         viewPager.setAdapter(adapter);
     }
 

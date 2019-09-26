@@ -3,7 +3,7 @@ package com.example.leaf.Model;
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 
-@ParseClassName("Item")
+@ParseClassName("product_item")
 public class Item extends ParseObject {
     public static final String KEY_ID="objectId";
     public static final String KEY_MARKET_ID="marketId";

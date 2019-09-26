@@ -26,7 +26,7 @@ public class Place extends ParseObject {
         return getString(KEY_CITY);
     }
 
-    public void seCity(String city)
+    public void setCity(String city)
     {
         put(KEY_CITY,city);
     }

@@ -28,7 +28,7 @@
     <View
         android:id="@+id/dividerLocation"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:layout_alignParentBottom="true"
-        android:background="?android:attr/listDivider" />
+        android:background="#E1E1E1"/>
 </RelativeLayout>

@@ -31,9 +31,9 @@ import java.util.List;
 public class LocationFragment extends Fragment {
 
     List<Place> places;
-    List<Item> items;
+   // List<Item> items;
     PlaceAdapter placeAdapter;
-    ItemAdapter itemAdapter;
+   // ItemAdapter itemAdapter;
     RecyclerView recyclerView;
     public LocationFragment() {
         // Required empty public constructor
@@ -64,7 +64,7 @@ public class LocationFragment extends Fragment {
 
         ParseQuery<Place> query = new ParseQuery<Place>(Place.class);
         //query.whereEqualTo("type","Fruit");
-        query.orderByAscending("name");
+        query.orderByAscending("city");
         places=new ArrayList<>();
         query.findInBackground(new FindCallback<Place>(){
 
@@ -78,7 +78,7 @@ public class LocationFragment extends Fragment {
                     placeAdapter.notifyDataSetChanged();
 
                 } else {
-                    Log.e("message", "Error Loading Products" + e);
+                    Log.e("message", "Error Loading Places" + e);
                 }
             }
         });

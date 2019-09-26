@@ -46,6 +46,7 @@ public class fruit_fragment extends Fragment {
 
         View view= inflater.inflate(R.layout.fragment_fruit, container, false);
         recyclerView= view.findViewById(R.id.fruitRecycleView);
+        //products=new ArrayList<>();
         productAdapter=new ProductAdapter(getContext(),products);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(productAdapter);
